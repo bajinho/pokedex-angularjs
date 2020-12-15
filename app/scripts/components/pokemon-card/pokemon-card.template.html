@@ -1,0 +1,43 @@
+<div ng-cloak>
+    <md-content>
+        <md-card>
+            <h1>#{{id}}</h1>
+            <img ng-src="{{sprites.front_default}}" width="140px" class="md-card-image" alt="Washed Out">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{{name}}</span>
+                </md-card-title-text>
+            </md-card-title>
+        </md-card>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="Stats">
+                <md-content class="md-padding">
+                    <br/>
+                    <md-list-item ng-repeat="x in stats">
+                        <p> {{ x.stat.name}} </p>
+                        <md-slider-container>
+                            <md-slider min="0" max="200" ng-model="x.base_stat" ng-disabled="true" ng-readonly="true" md-discrete aria-label="red" id={{x.stat.name}} class="md-warn">
+                            </md-slider>
+                        </md-slider-container>
+                    </md-list-item>
+                </md-content>
+            </md-tab>
+            <md-tab label="Moves">
+                <md-content class="md-padding">
+                    <md-list-item class="md-1-line" ng-repeat="x in moves" ng-click="null">
+                        <div class="md-list-item-text" layout="column">
+                            <p> {{ x.move.name}} </p>
+                        </div>
+                    </md-list-item>
+                </md-content>
+            </md-tab>
+            <md-tab label="Abilities">
+                <md-content class="md-padding">
+                    <md-list-item ng-repeat="x in abilities">
+                        <p> {{ x.ability.name}} </p>
+                    </md-list-item>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-content>
+</div>
