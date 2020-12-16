@@ -16,7 +16,7 @@
                     <md-list-item ng-repeat="x in stats">
                         <p> {{ ::x.stat.name}} </p>
                         <md-slider-container>
-                            <md-slider min="0" max="200" ng-model="x.base_stat" ng-disabled="true" ng-readonly="true" md-discrete aria-label="red" id={{x.stat.name}} class="md-warn">
+                            <md-slider min="0" max="200" ng-model="::x.base_stat" ng-disabled="true" ng-readonly="true" md-discrete aria-label="red" id={{::x.stat.name}} class="md-warn">
                             </md-slider>
                         </md-slider-container>
                     </md-list-item>
