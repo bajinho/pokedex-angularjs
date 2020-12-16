@@ -21,6 +21,9 @@ angular
             'ngMaterial',
             'ngMessages'
         ])
+        .value('api', {
+            baseUrl: 'https://pokeapi.co/api/v2/'
+        })
         .config(function ($routeProvider) {
             $routeProvider
                     .when('/', {

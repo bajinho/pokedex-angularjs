@@ -11,19 +11,26 @@
  */
 
 angular
-    .module('appPokedex')
-    .service('apiService', function($http) {
-        var WSURL = 'https://pokeapi.co/api/v2/';
-
-        return {
-            get: function(url) {
-                return $http.get(WSURL + url, {
-                    headers: {
-                        "Authorization": 'Bearer <my-token>'
+        .module('appPokedex')
+        .service('apiService', ['$http', 'api', function ($http, api) {
+                return {
+                    get: function (url) {
+                        return $http.get(api.baseUrl + url, {
+                            headers: {
+                                "Authorization": 'Bearer <my-token>'
+                            }
+                        }).then(function (response) {
+                            return response.data;
+                        });
+                    },
+                    post: function (url) {
+                        return $http.post(WSURL + url, {
+                            headers: {
+                                "Authorization": 'Bearer <my-token>'
+                            }
+                        }).then(function (response) {
+                            return response.data;
+                        });
                     }
-                }).then(function(response) {
-                    return response.data;
-                });
-            }
-        };
-    });
+                };
+            }]);

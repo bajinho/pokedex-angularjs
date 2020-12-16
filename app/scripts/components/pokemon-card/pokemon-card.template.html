@@ -24,7 +24,7 @@
             </md-tab>
             <md-tab label="Moves">
                 <md-content class="md-padding">
-                    <md-list-item class="md-1-line" ng-repeat="x in moves" ng-click="null">
+                    <md-list-item class="md-1-line" ng-repeat="x in moves | limitTo: 5" ng-click="null">
                         <div class="md-list-item-text" layout="column">
                             <p> {{ x.move.name}} </p>
                         </div>
