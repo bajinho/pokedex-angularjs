@@ -15,7 +15,7 @@
                              placeholder="Ex. pikachu"
                              input-aria-labelledby="favoriteStateLabel">
                 <md-item-template>
-                    <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+                    <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{::item.display}}</span>
                 </md-item-template>
                                 <md-not-found>
                                     No pokemon matching "{{ctrl.searchText}}" were found.
