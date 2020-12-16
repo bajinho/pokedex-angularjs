@@ -24,7 +24,7 @@ angular
                         });
                     },
                     post: function (url) {
-                        return $http.post(WSURL + url, {
+                        return $http.post(api.baseUrl + url, {
                             headers: {
                                 "Authorization": 'Bearer <my-token>'
                             }
