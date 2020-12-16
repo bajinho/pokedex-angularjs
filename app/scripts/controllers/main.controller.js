@@ -52,16 +52,19 @@ angular
                 }
 
                 function searchTextChange(text) {
+                    if (text) {
+                        $log.info('Text changed to ' + text);
+                    }
                     $scope.display = false;
-                    $log.info('Text changed to ' + text);
                 }
 
                 function selectedItemChange(item) {
                     if (item) {
                         $rootScope.pokemon = item.display;
                         $scope.display = true;
+                        $log.info('Item changed to ' + JSON.stringify(item));
                     }
-                    $log.info('Item changed to ' + JSON.stringify(item));
+
                 }
 
                 /**
